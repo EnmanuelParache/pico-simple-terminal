@@ -27,13 +27,13 @@ minicom -b 115200 -o -D /dev/tty.usbmodem0000000000001
 ## Try it out
 
 ### HELLO command
-```bash
+```text
 Please insert a command > hello
 What's your name? Enmanuel
 Hello, Enmanuel!
 ```
 ### HELP command
-```bash
+```text
 Please insert a command > help                                                  
                                                                                 
 Command Description                                                             
