@@ -4,7 +4,12 @@ Raspberry Pi Pico stuff
 # Simple terminal
 Example of a simple usb terminal
 
-## Prepare the project
+## Configura the project
+### Create build directory
+```bash
+mkdir build
+```
+### Change to build directory and cmake the project
 ```bash
 cd build && cmake .. -DPICO_SDK_PATH=${/path/to/pico-sdk}
 ```
