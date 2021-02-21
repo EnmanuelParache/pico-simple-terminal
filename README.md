@@ -14,12 +14,14 @@ mkdir build
 cd build && cmake .. -DPICO_SDK_PATH=${/path/to/pico-sdk}
 ```
 
-## Build
+## Build the project
+While on build directory run
 ```bash
-cd make simple_terminal
+make simple_terminal
 ```
 
 ## Write to pico
+On MacOS you can run
 ```bash
 cp build/simple_terminal/simple_terminnal.uf2 /Volumes/RPI-RP2
 ```
