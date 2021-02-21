@@ -16,7 +16,7 @@ cd make simple_terminal
 
 ## Write to pico
 ```bash
-cp build/simple_terminal/simple_terminnal.uf2
+cp build/simple_terminal/simple_terminnal.uf2 /Volumes/RPI-RP2
 ```
 
 ## Connect to simple terminal using minicom
@@ -24,11 +24,25 @@ cp build/simple_terminal/simple_terminnal.uf2
 minicom -b 115200 -o -D /dev/tty.usbmodem0000000000001
 ```
 
-## Try out
+## Try it out
+
+### HELLO command
 ```bash
 Please insert a command > hello
 What's your name? Enmanuel
 Hello, Enmanuel!
+```
+### HELP command
+```bash
+Please insert a command > help                                                  
+                                                                                
+Command Description                                                             
+                                                                                
+on      turn pico led on                                                        
+off     turn pico's led off                                                     
+help    asks your name and salute                                               
+                                                                                
+Note:   all commands are case insensitive :)  
 ```
 
 # References
