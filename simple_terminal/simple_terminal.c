@@ -36,8 +36,7 @@ void ask_name_and_salute(void) {
 }
 
 void process_command(void) {
-    char command[5];
-    int result = 0;
+    char command[MAX_CMD_SZ];
 
     printf("Please insert a command > ");
     scanf("%s", command);
@@ -45,37 +44,21 @@ void process_command(void) {
 
     for (char *p = command; *p; ++p) *p = tolower(*p); // lowercase command
     if (equal_str(command, "off")) {
-        result = 0;
+        gpio_put(LED_PIN, 0);
     }
     else if (equal_str(command, "on")) {
-        result = 1;
+        gpio_put(LED_PIN, 1);
     }
     else if (equal_str(command, "hello")) {
-        result = 2;
+        ask_name_and_salute();
     }
     else if (equal_str(command, "help")) {
         print_help();
     }
     else {
-        result = -1;
-    }
-
-    switch (result)
-    {
-    case 0:
-        gpio_put(LED_PIN, 0);
-        break;
-    case 1:
-        gpio_put(LED_PIN, 1);
-        break;
-    case 2:
-        ask_name_and_salute();
-        break;
-    default:
         printf("Error: command %s is not supported", command);
         sleep_ms(2000);
         clear_line();
-        break;
     }
     return;
 }
