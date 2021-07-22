@@ -11,7 +11,7 @@ mkdir build
 ```
 ### Change to build directory and cmake the project
 ```bash
-cd build && cmake .. -DPICO_SDK_PATH=${/path/to/pico-sdk}
+cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -DPICO_SDK_PATH=${/path/to/pico-sdk}
 ```
 
 ## Build the project
@@ -23,12 +23,12 @@ make simple_terminal
 ## Write to pico
 On MacOS you can run
 ```bash
-cp build/simple_terminal/simple_terminnal.uf2 /Volumes/RPI-RP2
+cp build/simple_terminal/simple_terminal.uf2 /Volumes/RPI-RP2
 ```
 
 ## Connect to simple terminal using minicom
 ```bash
-minicom -b 115200 -o -D /dev/tty.usbmodem0000000000001
+minicom -b 115200 -o -D /dev/dev/tty.usbmodem14201
 ```
 
 ## Try it out

@@ -17,6 +17,10 @@ int main() {
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
 
+    gpio_put(LED_PIN, 1);
+    sleep_ms(2000);
+    gpio_put(LED_PIN, 0);
+    
     while (true) {
         // ask_name_and_salute();
         process_command();
