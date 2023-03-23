@@ -21,12 +21,26 @@ make simple_terminal
 ```
 
 ## Write to pico
-On MacOS you can run
+### On MacOS you can run
 ```bash
 cp build/simple_terminal/simple_terminal.uf2 /Volumes/RPI-RP2
 ```
+### On Windows WSL
+Create a mounting directory
+```bash
+sudo mkdir /mnt/e
+```
+Assuming in Windows Pico drive is E:
+```bash
+sudo mount -t drvfs E: /mnt/e
+```
 
-## Connect to simple terminal using minicom
+Copy uf2 file to pico bootloader
+```bash
+cp build/simple_terminal/simple_terminal.uf2 /mnt/e
+```
+
+## Connect to simple terminal using minicom or PuTTY
 ```bash
 minicom -b 115200 -o -D /dev/dev/tty.usbmodem14201
 ```
@@ -47,7 +61,8 @@ Command Description
                                                                                 
 on      turn pico led on                                                        
 off     turn pico's led off                                                     
-help    asks your name and salute                                               
+hello   asks your name and salute
+help    Display this dialogue
                                                                                 
 Note:   all commands are case insensitive :)  
 ```

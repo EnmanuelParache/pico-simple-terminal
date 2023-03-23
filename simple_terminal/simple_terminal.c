@@ -72,7 +72,8 @@ void print_help(void) {
     printf("\n");
     printf("on\tturn pico led on\n");
     printf("off\tturn pico's led off\n");
-    printf("help\tasks your name and salute\n");
+    printf("hello\tasks your name and salute\n");
+    printf("help\tDisplay this dialogue\n");
     printf("\nNote:\tall commands are case insensitive :)");
     printf("\n");
     return;
